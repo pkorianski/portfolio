@@ -6,12 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+  NavLink
 } from "reactstrap";
 
 const MyNavbar = () => {
@@ -20,13 +15,26 @@ const MyNavbar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">PATRICK M. KORIANSKI</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
+    <Navbar color="dark" light expand="md">
+      <NavbarBrand
+        className="text-white"
+        href="/portfolio"
+        style={{ marginLeft: "2.5em" }}
+      >
+        PATRICK M. KORIANSKI
+      </NavbarBrand>
+      <NavbarToggler style={{ backgroundColor: "white" }} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
+        <Nav className="ml-auto" navbar style={{ marginRight: "1.5em" }}>
           <NavItem>
-            <NavLink href="#">Home</NavLink>
+            <NavLink className="text-white" href="/portfolio" left>
+              Home
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className="text-white" href="/portfolio/projects" left>
+              Projects
+            </NavLink>
           </NavItem>
         </Nav>
       </Collapse>
